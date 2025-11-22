@@ -17,7 +17,7 @@ let categoriasMap = new Map(); // id -> nombre
 
 async function loadCategorias() {
   try {
-    const res = await fetch(`${API_BASE}/categorias`);
+    const res = await fetch(`${API_BASE}/categorias/`);
     if (!res.ok) throw new Error("Error al cargar categorías");
     const data = await res.json();
 
@@ -39,7 +39,7 @@ async function loadCategorias() {
 
 async function loadProductos() {
   try {
-    const res = await fetch(`${API_BASE}/productos`);
+    const res = await fetch(`${API_BASE}/productos/`);
     if (!res.ok) throw new Error("Error al cargar productos");
     const data = await res.json();
     renderProductos(data);
@@ -156,7 +156,7 @@ form.addEventListener("submit", async (e) => {
       if (!res.ok) throw new Error("Error al actualizar producto");
     } else {
       // CREATE
-      const res = await fetch(`${API_BASE}/productos`, {
+      const res = await fetch(`${API_BASE}/productos/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

@@ -14,12 +14,12 @@ async function loadMenu() {
   try {
     grid.innerHTML = "<p>Cargando...</p>";
     // Cambiar de /menu a /productos
-    const res = await fetch(`${API_BASE}/productos`);
+    const res = await fetch(`${API_BASE}/productos/`);
     if (!res.ok) throw new Error("Error al cargar productos");
     const productos = await res.json();
     
     // Obtener categorías para agrupar
-    const catRes = await fetch(`${API_BASE}/categorias`);
+    const catRes = await fetch(`${API_BASE}/categorias/`);
     if (!catRes.ok) throw new Error("Error al cargar categorías");
     const categorias = await catRes.json();
     
