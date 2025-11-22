@@ -1,3 +1,4 @@
+// API Configuration
 const API_BASE = "/api/v1";
 
 const grid = document.getElementById("products-grid");
