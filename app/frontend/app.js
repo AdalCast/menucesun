@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+const API_BASE = "/api/v1";
 
 const grid = document.getElementById("products-grid");
 const searchInput = document.getElementById("search-input");
