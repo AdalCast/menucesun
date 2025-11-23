@@ -12,14 +12,14 @@ class ProductoMemoryRepository(IProductoRepository):
 
     def _cargar_datos_iniciales(self):
         productos_iniciales = [
-            Producto(1, "Café Americano", "Café negro clásico", Decimal("2.50"), 1, True, TamanoProducto.MEDIANO, ["Café", "Agua"], 5),
-            Producto(2, "Cappuccino", "Café con leche espumosa", Decimal("3.50"), 1, True, TamanoProducto.GRANDE, ["Café", "Leche", "Espuma"], 120),
-            Producto(3, "Latte", "Café con mucha leche", Decimal("4.00"), 1, True, TamanoProducto.GRANDE, ["Café", "Leche"], 150),
-            Producto(4, "Frappé de Chocolate", "Bebida fría de chocolate", Decimal("5.50"), 2, True, TamanoProducto.GRANDE, ["Café", "Chocolate", "Hielo", "Crema"], 320),
-            Producto(5, "Jugo de Naranja", "Jugo natural de naranja", Decimal("3.00"), 2, True, TamanoProducto.MEDIANO, ["Naranja"], 110),
-            Producto(6, "Croissant", "Pan francés con mantequilla", Decimal("2.80"), 5, True, None, ["Harina", "Mantequilla", "Huevo"], 231),
-            Producto(7, "Cheesecake", "Pastel de queso con fresas", Decimal("4.50"), 3, False, None, ["Queso crema", "Fresas", "Galletas"], 410),
-            Producto(8, "Sandwich Club", "Sandwich de pollo, tocino y verduras", Decimal("6.50"), 6, True, None, ["Pan", "Pollo", "Tocino", "Lechuga", "Tomate"], 520),
+            Producto(1, "Café Americano", "Café negro clásico", Decimal("25"), 1, True, TamanoProducto.MEDIANO, ["Café", "Agua"], 5),
+            Producto(2, "Cappuccino", "Café con leche espumosa", Decimal("35"), 1, True, TamanoProducto.GRANDE, ["Café", "Leche", "Espuma"], 120),
+            Producto(3, "Latte", "Café con mucha leche", Decimal("40"), 1, True, TamanoProducto.GRANDE, ["Café", "Leche"], 150),
+            Producto(4, "Frappé de Chocolate", "Bebida fría de chocolate", Decimal("55"), 2, True, TamanoProducto.GRANDE, ["Café", "Chocolate", "Hielo", "Crema"], 320),
+            Producto(5, "Jugo de Naranja", "Jugo natural de naranja", Decimal("30"), 2, True, TamanoProducto.MEDIANO, ["Naranja"], 110),
+            Producto(6, "Croissant", "Pan francés con mantequilla", Decimal("28"), 5, True, None, ["Harina", "Mantequilla", "Huevo"], 231),
+            Producto(7, "Cheesecake", "Pastel de queso con fresas", Decimal("45"), 3, False, None, ["Queso crema", "Fresas", "Galletas"], 410),
+            Producto(8, "Sandwich Club", "Sandwich de pollo, tocino y verduras", Decimal("65"), 6, True, None, ["Pan", "Pollo", "Tocino", "Lechuga", "Tomate"], 520),
         ]
         self._productos.extend(productos_iniciales)
         self._siguiente_id = max(p.id for p in productos_iniciales) + 1
