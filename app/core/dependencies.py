@@ -27,6 +27,7 @@ from repositories.database_repository import (
     CategoriaDatabaseRepository,
 )
 from services.menu_service import MenuService
+from services.pedido_saga_service import PedidoSagaService
 from repositories.interfaces import IProductoRepository, ICategoriaRepository
 from core.config import get_settings
 from db.session import get_db
@@ -72,3 +73,19 @@ def get_menu_service() -> MenuService:
     
     producto_repo, categoria_repo = get_repositorios(db)
     return MenuService(producto_repo, categoria_repo)
+
+
+def get_pedido_saga_service() -> PedidoSagaService:
+    """
+    Obtiene el servicio de pedidos con patrón Saga.
+    """
+    from core.config import get_settings
+    settings = get_settings()
+    
+    db = None
+    if settings.REPO_BACKEND == "database":
+        from db.session import SessionLocal
+        db = SessionLocal()
+    
+    producto_repo, _ = get_repositorios(db)
+    return PedidoSagaService(producto_repo)

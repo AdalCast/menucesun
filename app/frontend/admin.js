@@ -61,7 +61,7 @@ function renderProductos(productos) {
       <td style="padding:6px 8px; border-bottom:1px solid #111827;">${p.id}</td>
       <td style="padding:6px 8px; border-bottom:1px solid #111827;">${p.nombre}</td>
       <td style="padding:6px 8px; border-bottom:1px solid #111827;">${catNombre}</td>
-      <td style="padding:6px 8px; border-bottom:1px solid #111827;">$${Number(p.precio).toFixed(2)}</td>
+      <td style="padding:6px 8px; border-bottom:1px solid #111827;">$${Number(p.precio).toFixed(2)} MXN</td>
       <td style="padding:6px 8px; border-bottom:1px solid #111827;">${
         p.disponible ? "Sí" : "No"
       }</td>

@@ -3,12 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 
-from api.v1.routers import productos, categorias, menu
+from api.v1.routers import productos, categorias, menu, pedidos
 
 app = FastAPI(
     title="Cafetería API",
     version="1.0.0",
-    description="API REST para gestión de menú de cafetería con FastAPI."
+    description="API REST para gestión de menú de cafetería con FastAPI y Patrón Saga."
 )
 
 # ----------------------------
@@ -30,6 +30,7 @@ API_PREFIX = "/api/v1"
 app.include_router(menu.router, prefix=API_PREFIX)
 app.include_router(categorias.router, prefix=API_PREFIX)
 app.include_router(productos.router, prefix=API_PREFIX)
+app.include_router(pedidos.router, prefix=API_PREFIX)
 
 
 # Servir interfaz gráfica 

@@ -105,7 +105,7 @@ function renderProducts() {
         </header>
         <p class="product-description">${p.descripcion}</p>
         <div class="product-meta">
-          <span class="product-price">$${p.precio}</span>
+          <span class="product-price">$${p.precio} MXN</span>
           <span class="${p.disponible ? "product-available" : "product-unavailable"}">${p.disponible ? "Disponible" : "No disponible"}</span>
         </div>
       </article>
